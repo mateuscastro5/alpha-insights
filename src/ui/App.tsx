@@ -7,9 +7,12 @@ function App() {
   return (
     <BrowserRouter>
       <div className="h-screen flex flex-col">
+        {/* Hover zone for scrollbar */}
+        <div className="hover-zone" />
+        
         <TitleBar />
         
-        <div className="flex-1 flex overflow-hidden">
+        <div className="flex-1 flex overflow-hidden scroll-container">
           <Routes>
             <Route path="/" element={<Dashboard />} />
           </Routes>

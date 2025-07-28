@@ -1,11 +1,45 @@
-# React + TypeScript + Vite
+# alphaSights Insights
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A desktop application for data analysis and insights, built with React, TypeScript, Vite and Electron.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Modern and responsive interface with Tailwind CSS
+- Dashboard with metrics and visualizations
+- Performance and productivity analysis
+- Pull requests and commits management
+- Integrated user profile
+
+## Technologies Used
+
+- React 19
+- TypeScript
+- Electron
+- Vite
+- Tailwind CSS
+
+## Available Commands
+
+### Development
+```bash
+npm run dev
+```
+
+### Build
+```bash
+npm run build
+```
+
+### Distribution (Windows)
+```bash
+npm run dist:win
+```
+
+## Project Structure
+
+- `src/electron/` - Electron main process code
+- `src/ui/` - React interface
+- `src/shared/` - Shared types and constants
 
 ## Expanding the ESLint configuration
 
