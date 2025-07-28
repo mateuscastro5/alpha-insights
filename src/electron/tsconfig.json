@@ -6,4 +6,5 @@
         "outDir": "../../dist-electron",
         "skipLibCheck": true,
     },
+    "include": ["main.ts", "preload.ts", "utils/**/*"]
 }
