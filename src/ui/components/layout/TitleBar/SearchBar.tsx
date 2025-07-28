@@ -4,7 +4,7 @@ interface SearchBarProps {
 }
 
 const SearchBar = ({ 
-  placeholder = "Pesquisar projetos, commits, desenvolvedores...",
+  placeholder = "Search projects, commits, developers...",
   onSearch 
 }: SearchBarProps) => {
   return (

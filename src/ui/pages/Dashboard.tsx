@@ -17,29 +17,29 @@ const Dashboard: React.FC = () => {
         <div className="grid grid-cols-4 gap-6">
           <MetricCard
             value={47}
-            label="Commits esta semana"
-            subtitle="+12% vs semana anterior"
+            label="Commits this week"
+            subtitle="+12% vs last week"
             color="blue"
             onClick={() => handleMetricClick('commits')}
           />
           <MetricCard
             value={12}
-            label="PRs abertas"
-            subtitle="3 aguardando review"
+            label="Open PRs"
+            subtitle="3 awaiting review"
             color="yellow"
             onClick={() => handleMetricClick('prs')}
           />
           <MetricCard
             value={8}
-            label="Reviews feitas"
-            subtitle="2 pendentes"
+            label="Reviews done"
+            subtitle="2 pending"
             color="green"
             onClick={() => handleMetricClick('reviews')}
           />
           <MetricCard
             value="95%"
             label="Uptime"
-            subtitle="Excelente ✨"
+            subtitle="Excellent ✨"
             color="purple"
             onClick={() => handleMetricClick('uptime')}
           />

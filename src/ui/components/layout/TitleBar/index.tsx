@@ -53,12 +53,12 @@ const TitleBar = () => {
 
   const handleSearch = (query: string) => {
     console.log('Searching for:', query);
-    // TODO: Implementar busca
+    // TODO: Implement search
   };
 
   const handleSettingsClick = () => {
     console.log('Settings clicked');
-    // TODO: Abrir configurações
+    // TODO: Open settings
   };
 
   return (

@@ -123,8 +123,16 @@ const PRCard = ({
     >
       <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
       
-      <div className="relative z-10 flex items-start justify-between">
-        <div className="flex-1">
+      <div className="relative z-10 flex items-center gap-4">
+        <div className="flex-shrink-0">
+          <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+            </svg>
+          </div>
+        </div>
+
+        <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-2">
             <div className={`w-3 h-3 rounded-full ${statusColors.indicator} shadow-lg shadow-current/50 group-hover:animate-pulse`} />
             <span className={`text-xs font-medium ${statusColors.text} group-hover:text-opacity-90 transition-all duration-300`}>
@@ -137,48 +145,38 @@ const PRCard = ({
             {title}
           </h3>
 
-          <div className="flex items-center gap-3 mb-3">
-            <div className="flex items-center gap-2">
-              <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
-                </svg>
-              </div>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
               <span className="text-sm text-gray-300 group-hover:text-gray-200 transition-colors duration-300">{author.name}</span>
-            </div>
-            <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
-              {branch}
-            </div>
-          </div>
-
-          <div className="flex items-center gap-4 text-xs">
-            <div className="flex items-center gap-1">
-              <span className="text-green-400">+{additions}</span>
-              <span className="text-red-400">-{deletions}</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col items-end gap-2">
-          <div className="flex -space-x-2">
-            {reviewers.slice(0, 3).map((reviewer, index) => (
-              <div
-                key={index}
-                className={`w-6 h-6 rounded-full border-2 border-slate-700 flex items-center justify-center text-xs font-bold transition-all duration-300 group-hover:scale-110 ${
-                  reviewer.status === 'approved' ? 'bg-green-600 text-white group-hover:bg-green-500' :
-                  reviewer.status === 'changes_requested' ? 'bg-red-600 text-white group-hover:bg-red-500' :
-                  'bg-gray-600 text-gray-300 group-hover:bg-gray-500'
-                }`}
-                title={`${reviewer.name} - ${reviewer.status}`}
-              >
-                {reviewer.name.charAt(0).toUpperCase()}
+              <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                {branch}
               </div>
-            ))}
-            {reviewers.length > 3 && (
-              <div className="w-6 h-6 bg-slate-600 rounded-full border-2 border-slate-700 flex items-center justify-center text-xs text-gray-300 group-hover:scale-110 group-hover:bg-slate-500 transition-all duration-300">
-                +{reviewers.length - 3}
+              <div className="flex items-center gap-1 text-xs">
+                <span className="text-green-400">+{additions}</span>
+                <span className="text-red-400">-{deletions}</span>
               </div>
-            )}
+            </div>
+
+            <div className="flex -space-x-2">
+              {reviewers.slice(0, 3).map((reviewer, index) => (
+                <div
+                  key={index}
+                  className={`w-6 h-6 rounded-full border-2 border-slate-700 flex items-center justify-center text-xs font-bold transition-all duration-300 group-hover:scale-110 ${
+                    reviewer.status === 'approved' ? 'bg-green-600 text-white group-hover:bg-green-500' :
+                    reviewer.status === 'changes_requested' ? 'bg-red-600 text-white group-hover:bg-red-500' :
+                    'bg-gray-600 text-gray-300 group-hover:bg-gray-500'
+                  }`}
+                  title={`${reviewer.name} - ${reviewer.status}`}
+                >
+                  {reviewer.name.charAt(0).toUpperCase()}
+                </div>
+              ))}
+              {reviewers.length > 3 && (
+                <div className="w-6 h-6 bg-slate-600 rounded-full border-2 border-slate-700 flex items-center justify-center text-xs text-gray-300 group-hover:scale-110 group-hover:bg-slate-500 transition-all duration-300">
+                  +{reviewers.length - 3}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

@@ -10,9 +10,9 @@ interface PerformancePanelProps {
 
 const PerformancePanel = ({
   metrics = [
-    { label: "Produtividade", value: 87, color: "blue" },
-    { label: "Qualidade do Código", value: 94, color: "green" },
-    { label: "Colaboração", value: 76, color: "purple" },
+    { label: "Productivity", value: 87, color: "blue" },
+    { label: "Code Quality", value: 94, color: "green" },
+    { label: "Collaboration", value: 76, color: "purple" },
   ]
 }: PerformancePanelProps) => {
   const colorClasses = {
@@ -39,7 +39,7 @@ const PerformancePanel = ({
         <div className="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center">
           <span className="text-blue-400 text-sm">📊</span>
         </div>
-        <h2 className="text-xl font-semibold text-white">Performance Semanal</h2>
+        <h2 className="text-xl font-semibold text-white">Weekly Performance</h2>
       </div>
       <div className="space-y-6">
         {metrics.map((metric, i) => (

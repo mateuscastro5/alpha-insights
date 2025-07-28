@@ -24,14 +24,14 @@ const PRsPanel = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
 
-  // Mock data - simulando 20 PRs
+  // Mock data - simulating 20 PRs
   const mockPRs: PRData[] = [
     {
       id: 1847,
-      title: "feat: implementa sistema de métricas em tempo real para dashboards",
+      title: "feat: implement real-time metrics system for dashboards",
       author: { name: "mateusCastro" },
       status: "merged",
-      createdAt: "2h atrás",
+      createdAt: "2h ago",
       branch: "feature/real-time-metrics",
       additions: 234,
       deletions: 12,
@@ -42,10 +42,10 @@ const PRsPanel = () => {
     },
     {
       id: 1846,
-      title: "fix: corrige bug de renderização nos gráficos de performance",
+      title: "fix: resolve rendering bug in performance charts",
       author: { name: "pedroAlves" },
       status: "approved",
-      createdAt: "4h atrás",
+      createdAt: "4h ago",
       branch: "bugfix/chart-rendering",
       additions: 67,
       deletions: 23,
@@ -56,10 +56,10 @@ const PRsPanel = () => {
     },
     {
       id: 1845,
-      title: "refactor: melhora estrutura de componentes do dashboard",
+      title: "refactor: improve dashboard components structure",
       author: { name: "anaRocha" },
       status: "review_requested",
-      createdAt: "6h atrás",
+      createdAt: "6h ago",
       branch: "refactor/dashboard-components",
       additions: 156,
       deletions: 89,
@@ -70,10 +70,10 @@ const PRsPanel = () => {
     },
     {
       id: 1844,
-      title: "feat: adiciona autenticação com OAuth2 e JWT",
+      title: "feat: add OAuth2 and JWT authentication",
       author: { name: "carlosOliveira" },
       status: "changes_requested",
-      createdAt: "8h atrás",
+      createdAt: "8h ago",
       branch: "feature/oauth-authentication",
       additions: 445,
       deletions: 78,
@@ -84,10 +84,10 @@ const PRsPanel = () => {
     },
     {
       id: 1843,
-      title: "docs: atualiza documentação da API de integração",
+      title: "docs: update integration API documentation",
       author: { name: "lucasSantos" },
       status: "draft",
-      createdAt: "1d atrás",
+      createdAt: "1d ago",
       branch: "docs/api-integration",
       additions: 23,
       deletions: 5,
@@ -95,10 +95,10 @@ const PRsPanel = () => {
     },
     {
       id: 1842,
-      title: "test: adiciona testes unitários para serviços de métricas",
+      title: "test: add unit tests for metrics services",
       author: { name: "mariaFernanda" },
       status: "review_requested",
-      createdAt: "1d atrás",
+      createdAt: "1d ago",
       branch: "test/metrics-services",
       additions: 189,
       deletions: 12,
@@ -108,10 +108,10 @@ const PRsPanel = () => {
     },
     {
       id: 1841,
-      title: "feat: implementa cache Redis para otimização de queries",
+      title: "feat: implement Redis cache for query optimization",
       author: { name: "rafaelCosta" },
       status: "merged",
-      createdAt: "2d atrás",
+      createdAt: "2d ago",
       branch: "feature/redis-cache",
       additions: 312,
       deletions: 45,
@@ -122,10 +122,10 @@ const PRsPanel = () => {
     },
     {
       id: 1840,
-      title: "fix: resolve problema de memory leak no worker de processamento",
+      title: "fix: resolve memory leak in processing worker",
       author: { name: "guilhermeRibeiro" },
       status: "approved",
-      createdAt: "2d atrás",
+      createdAt: "2d ago",
       branch: "bugfix/memory-leak-worker",
       additions: 78,
       deletions: 134,
@@ -135,11 +135,11 @@ const PRsPanel = () => {
     }
   ];
 
-  // Duplicar os dados para simular 20 PRs
+  // Duplicate data to simulate 20 PRs
   const allPRs = [...mockPRs, ...mockPRs.map(pr => ({ 
     ...pr, 
     id: pr.id + 1000,
-    createdAt: `${Math.floor(Math.random() * 7) + 1}d atrás`
+    createdAt: `${Math.floor(Math.random() * 7) + 1}d ago`
   }))];
 
   const totalPages = Math.ceil(allPRs.length / itemsPerPage);
@@ -148,7 +148,7 @@ const PRsPanel = () => {
 
   const handlePRClick = (pr: PRData) => {
     console.log('PR clicked:', pr);
-    // TODO: Abrir modal ou navegar para detalhes da PR
+    // TODO: Open modal or navigate to PR details
   };
 
   return (
@@ -161,11 +161,11 @@ const PRsPanel = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
             </svg>
           </div>
-          <h2 className="text-xl font-semibold text-white">Pull Requests Recentes</h2>
+          <h2 className="text-xl font-semibold text-white">Recent Pull Requests</h2>
         </div>
         
         <div className="text-sm text-gray-400">
-          {allPRs.length} PRs totais
+          {allPRs.length} total PRs
         </div>
       </div>
 
@@ -180,10 +180,9 @@ const PRsPanel = () => {
         ))}
       </div>
 
-      {/* Paginação */}
       <div className="flex items-center justify-between pt-4 border-t border-slate-700/30">
         <div className="text-sm text-gray-400">
-          Página {currentPage} de {totalPages} • {currentPRs.length} de {allPRs.length} PRs
+          Page {currentPage} of {totalPages} • {currentPRs.length} of {allPRs.length} PRs
         </div>
         
         <div className="flex items-center gap-2">
@@ -192,7 +191,7 @@ const PRsPanel = () => {
             disabled={currentPage === 1}
             className="px-3 py-1 text-sm text-gray-400 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
-            ← Anterior
+            ← Previous
           </button>
           
           <div className="flex items-center gap-1">
@@ -216,7 +215,7 @@ const PRsPanel = () => {
             disabled={currentPage === totalPages}
             className="px-3 py-1 text-sm text-gray-400 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
-            Próxima →
+            Next →
           </button>
         </div>
       </div>

@@ -10,9 +10,9 @@ interface CommitsPanelProps {
 
 const CommitsPanel = ({ 
   commits = [
-    { msg: "feat: adiciona análise de métricas", time: "2h atrás", type: "feature" },
-    { msg: "fix: corrige bug no dashboard", time: "4h atrás", type: "bugfix" },
-    { msg: "refactor: melhora performance", time: "1d atrás", type: "refactor" },
+    { msg: "feat: add metrics analysis", time: "2h ago", type: "feature" },
+    { msg: "fix: resolve dashboard bug", time: "4h ago", type: "bugfix" },
+    { msg: "refactor: improve performance", time: "1d ago", type: "refactor" },
   ]
 }: CommitsPanelProps) => {
   return (
@@ -21,7 +21,7 @@ const CommitsPanel = ({
         <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center">
           <span className="text-green-400 text-sm">📝</span>
         </div>
-        <h2 className="text-xl font-semibold text-white">Últimos Commits</h2>
+        <h2 className="text-xl font-semibold text-white">Latest Commits</h2>
       </div>
       <div className="space-y-3">
         {commits.map((commit, i) => (
