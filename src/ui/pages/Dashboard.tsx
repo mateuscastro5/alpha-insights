@@ -2,7 +2,7 @@ import React from 'react';
 import UserProfileCard from '../components/dashboard/UserProfileCard';
 import MetricCard from '../components/dashboard/MetricCard';
 import CommitsPanel from '../components/dashboard/CommitsPanel';
-import PerformancePanel from '../components/dashboard/PerformancePanel';
+import PRsPanel from '../components/dashboard/PRsPanel';
 
 const Dashboard: React.FC = () => {
   const handleMetricClick = (metric: string) => {
@@ -46,9 +46,11 @@ const Dashboard: React.FC = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-3 gap-6">
         <CommitsPanel />
-        <PerformancePanel />
+        <div className="col-span-2">
+          <PRsPanel />
+        </div>
       </div>
     </div>
   );
