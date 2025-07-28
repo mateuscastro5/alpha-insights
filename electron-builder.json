@@ -1,7 +1,7 @@
 {
     "appId": "com.alphasights.insights",
     "productName": "alphaSights Insights",
-    "description": "Aplicação desktop para análise de dados e insights da alphaSights",
+    "description": "Desktop application for data analysis and insights from alphaSights",
     "author": "alphaSights",
     "copyright": "Copyright © 2025 alphaSights",
     "files": ["dist-electron", "dist-react"],
