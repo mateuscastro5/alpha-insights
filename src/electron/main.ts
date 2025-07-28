@@ -1,5 +1,6 @@
 import { app, BrowserWindow } from "electron";
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { isDev } from "./utils/dev.js";
 import { setupWindowHandlers, setupSettingsHandlers } from "./ipc/handlers.js";
@@ -9,10 +10,14 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 let mainWindow: BrowserWindow;
 
 app.on("ready", () => {
+    const iconPath = path.join(process.cwd(), 'src/ui/assets/AlphaLogo.png');
+    
     mainWindow = new BrowserWindow({
         width: 1368,
         height: 800,
         frame: false,
+        title: 'alphaSights Insights',
+        icon: iconPath,
         titleBarStyle: 'hidden',
         webPreferences: {
             nodeIntegration: false,

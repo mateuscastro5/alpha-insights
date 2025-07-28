@@ -68,8 +68,8 @@ const TitleBar = () => {
         style={{ WebkitAppRegion: 'drag' }}
       >
         <div className="flex items-center gap-2">
-          <img src={AlphaLogo} alt="Alpha Insights" className="w-5 h-5" />
-          <span className="text-white text-xs font-bold uppercase">alpha</span>
+          <img src={AlphaLogo} alt="alphaSights Insights" className="w-5 h-5" />
+          <span className="text-white text-xs font-bold uppercase">alphaSights</span>
         </div>
 
         <div className="flex items-center gap-2 flex-1 max-w-md mx-4" style={{ WebkitAppRegion: 'no-drag' }}>

@@ -1,15 +1,32 @@
 {
-    "appId": "com.m-castro.stupid-game",
+    "appId": "com.alphasights.insights",
+    "productName": "alphaSights Insights",
+    "description": "Aplicação desktop para análise de dados e insights da alphaSights",
+    "author": "alphaSights",
+    "copyright": "Copyright © 2025 alphaSights",
     "files": ["dist-electron", "dist-react"],
-    "icon": "./desktop-icon.png",
+    "directories": {
+        "output": "dist"
+    },
+    "icon": "./icon.png",
     "mac": {
-        "target": "dmg"
+        "target": "dmg",
+        "icon": "./icon.png",
+        "category": "public.app-category.business"
     },
     "linux": {
         "target": "AppImage",
-        "category": "Utility"   
+        "category": "Office",
+        "icon": "./icon.png"
     },
     "win": {
-        "target": ["portable", "msi"]
+        "target": ["portable", "msi"],
+        "icon": "./icon.png"
+    },
+    "portable": {
+        "artifactName": "alphaSights-Insights-${version}-portable.exe"
+    },
+    "msi": {
+        "artifactName": "alphaSights-Insights-${version}-setup.msi"
     }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "electronapp",
+  "name": "alphasights-insights",
   "private": true,
   "version": "0.0.0",
   "main": "dist-electron/main.js",
