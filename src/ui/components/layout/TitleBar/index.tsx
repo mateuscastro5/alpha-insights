@@ -62,33 +62,56 @@ const TitleBar = () => {
   };
 
   return (
-    <div 
-      className="h-16 bg-gradient-to-r from-[#13151b] to-[#1a1c23] border-b border-slate-700/50 flex items-center justify-between px-6 select-none shadow-lg"
-      style={{ WebkitAppRegion: 'drag' }}
-    >
-      <div className="flex items-center gap-8">
-        <div className="flex items-center gap-3">
-          <img src={AlphaLogo} alt="Alpha Insights" className="w-8 h-8" />
-          <span className="text-white text-lg font-bold">ALPHA</span>
+    <div className="bg-gradient-to-r from-[#13151b] to-[#1a1c23] border-b border-slate-700/50 select-none shadow-lg">
+      <div 
+        className="h-8 flex items-center justify-between px-4 my-3"
+        style={{ WebkitAppRegion: 'drag' }}
+      >
+        <div className="flex items-center gap-2">
+          <img src={AlphaLogo} alt="Alpha Insights" className="w-5 h-5" />
+          <span className="text-white text-xs font-bold uppercase">alpha</span>
         </div>
 
-        <NavigationMenu 
-          activeTab={activeTab}
-          onTabChange={setActiveTab}
-        />
+        <div className="flex items-center gap-2 flex-1 max-w-md mx-4" style={{ WebkitAppRegion: 'no-drag' }}>
+          <button className="w-6 h-6 rounded-md hover:bg-gray-700/50 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button className="w-6 h-6 rounded-md hover:bg-gray-700/50 flex items-center justify-center text-gray-400 hover:text-white transition-colors">
+            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+          <div className="flex-1">
+            <SearchBar onSearch={handleSearch} />
+          </div>
+        </div>
+
+        <div className="flex" style={{ WebkitAppRegion: 'no-drag' }}>
+          <WindowControls
+            isMaximized={isMaximized}
+            onMinimize={handleMinimize}
+            onMaximize={handleMaximize}
+            onClose={handleClose}
+          />
+        </div>
       </div>
 
-      <div className="flex items-center gap-4">
-        <SearchBar onSearch={handleSearch} />
-        
-        <UserProfile onSettingsClick={handleSettingsClick} />
+      <div 
+        className="h-12 flex items-center justify-center relative px-6"
+        style={{ WebkitAppRegion: 'drag' }}
+      >
+        <div style={{ WebkitAppRegion: 'no-drag' }}>
+          <NavigationMenu 
+            activeTab={activeTab}
+            onTabChange={setActiveTab}
+          />
+        </div>
 
-        <WindowControls
-          isMaximized={isMaximized}
-          onMinimize={handleMinimize}
-          onMaximize={handleMaximize}
-          onClose={handleClose}
-        />
+        <div className="absolute right-6 flex items-center gap-3" style={{ WebkitAppRegion: 'no-drag' }}>
+          <UserProfile onSettingsClick={handleSettingsClick} />
+        </div>
       </div>
     </div>
   );
