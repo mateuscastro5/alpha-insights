@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./scrollbar.css";
 
 @theme {
   --color-alpha-bg: #0e1015;

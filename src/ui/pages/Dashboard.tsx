@@ -1,16 +1,15 @@
-import React from 'react';
 import UserProfileCard from '../components/dashboard/UserProfileCard';
 import MetricCard from '../components/dashboard/MetricCard';
 import CommitsPanel from '../components/dashboard/CommitsPanel';
 import PRsPanel from '../components/dashboard/PRsPanel';
 
-const Dashboard: React.FC = () => {
+const Dashboard = () => {
   const handleMetricClick = (metric: string) => {
     console.log('Metric clicked:', metric);
   };
 
   return (
-    <div className="flex-1 p-6 overflow-auto">
+    <div className="flex-1 p-6 overflow-auto scroll-container">
       <div className="mb-8">
         <UserProfileCard />
 

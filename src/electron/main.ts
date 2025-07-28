@@ -20,6 +20,8 @@ app.on("ready", () => {
             preload: path.join(__dirname, 'ipc/preload.js'),
             webSecurity: true,
             allowRunningInsecureContent: false,
+            experimentalFeatures: true,
+            enableBlinkFeatures: 'CSSPseudoElementsInWebComponents',
         },
         show: false,
         minWidth: 800,
@@ -43,7 +45,7 @@ app.on("ready", () => {
 
     if (isDev()) {
         mainWindow.loadURL('http://localhost:5123');
-        // mainWindow.webContents.openDevTools();
+        mainWindow.webContents.openDevTools();
     } else {
         mainWindow.loadFile(path.join(__dirname, '../dist-react/index.html'));
     }
