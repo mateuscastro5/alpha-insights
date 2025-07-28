@@ -1,7 +1,7 @@
 import { app, BrowserWindow } from "electron";
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { isDev } from "./util.js";
+import { isDev } from "./utils/dev.js";
 
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));

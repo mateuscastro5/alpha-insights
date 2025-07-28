@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+  --color-alpha-bg: #1a1a1a;
+  --color-alpha-surface: #2a2a2a;
+  --color-alpha-border: #3a3a3a;
+}

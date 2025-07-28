@@ -1,26 +1,14 @@
-import { useState } from 'react'
-import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
+    <div className="bg-alpha-bg text-white min-h-screen flex flex-col items-center justify-center">
+      <div className="">
+        <p className="text-white text-2xl">Agora as classes de texto devem funcionar!</p>
+        <p className="text-red-400 text-lg mt-4">Texto vermelho</p>
+        <p className="text-green-500 font-bold">Texto verde e negrito</p>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
