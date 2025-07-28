@@ -1,15 +1,22 @@
 
-function App() {
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import TitleBar from './components/layout/TitleBar';
+import Dashboard from './pages/Dashboard';
 
+function App() {
   return (
-    <div className="bg-alpha-bg text-white min-h-screen flex flex-col items-center justify-center">
-      <div className="">
-        <p className="text-white text-2xl">Agora as classes de texto devem funcionar!</p>
-        <p className="text-red-400 text-lg mt-4">Texto vermelho</p>
-        <p className="text-green-500 font-bold">Texto verde e negrito</p>
+    <BrowserRouter>
+      <div className="h-screen flex flex-col">
+        <TitleBar />
+        
+        <div className="flex-1 flex overflow-hidden">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+          </Routes>
+        </div>
       </div>
-    </div>
-  )
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
