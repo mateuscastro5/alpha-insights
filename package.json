@@ -7,16 +7,19 @@
   "scripts": {
     "dev": "npm-run-all --parallel dev:react dev:electron",
     "dev:react": "vite",
-    "dev:electron": "npm run transpile:electron && cross-env NODE_ENV=development electron .",
+    "dev:electron": "npm run transpile:electron && npm run transpile:ipc && npm run transpile:preload && cross-env NODE_ENV=development electron .",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "transpile:electron": "tsc --project src/electron/tsconfig.json",
-    "dist:win": "npm run transpile:electron && npm run build && electron-builder --win --x64"
+    "transpile:ipc": "tsc --project src/electron/ipc/tsconfig.json",
+    "transpile:preload": "tsc --project src/electron/ipc/tsconfig.preload.json",
+    "dist:win": "npm run transpile:electron && npm run transpile:ipc && npm run transpile:preload && npm run build && electron-builder --win --x64"
   },
   "dependencies": {
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.7.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
