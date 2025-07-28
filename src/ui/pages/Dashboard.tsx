@@ -1,6 +1,7 @@
 import UserProfileCard from '../components/dashboard/UserProfileCard';
 import MetricCard from '../components/dashboard/MetricCard';
-import CommitsPanel from '../components/dashboard/CommitsPanel';
+import TeamActivityPanel from '../components/dashboard/CommitsPanel';
+import ImpactChart from '../components/dashboard/ProductivityChart';
 import PRsPanel from '../components/dashboard/PRsPanel';
 
 const Dashboard = () => {
@@ -46,7 +47,10 @@ const Dashboard = () => {
       </div>
 
       <div className="grid grid-cols-3 gap-6">
-        <CommitsPanel />
+        <div className="space-y-6">
+          <TeamActivityPanel />
+          <ImpactChart />
+        </div>
         <div className="col-span-2">
           <PRsPanel />
         </div>
