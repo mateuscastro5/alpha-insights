@@ -6,7 +6,7 @@ import Dashboard from './pages/Dashboard';
 function App() {
   return (
     <BrowserRouter>
-      <div className="h-screen flex flex-col bg-slate-900">
+      <div className="h-screen flex flex-col">
         <TitleBar />
         
         <div className="flex-1 flex overflow-hidden">

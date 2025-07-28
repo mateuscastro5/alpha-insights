@@ -10,7 +10,7 @@ let mainWindow: BrowserWindow;
 
 app.on("ready", () => {
     mainWindow = new BrowserWindow({
-        width: 1200,
+        width: 1368,
         height: 800,
         frame: false,
         titleBarStyle: 'hidden',
@@ -21,7 +21,6 @@ app.on("ready", () => {
             webSecurity: true,
             allowRunningInsecureContent: false,
         },
-        backgroundColor: '#0f172a',
         show: false,
         minWidth: 800,
         minHeight: 600,
@@ -44,7 +43,7 @@ app.on("ready", () => {
 
     if (isDev()) {
         mainWindow.loadURL('http://localhost:5123');
-        mainWindow.webContents.openDevTools();
+        // mainWindow.webContents.openDevTools();
     } else {
         mainWindow.loadFile(path.join(__dirname, '../dist-react/index.html'));
     }
